@@ -7,13 +7,13 @@ Clock = pygame.time.Clock()
 pygame.mouse.set_visible(False)
 
 # images
-WOOD_BG = pygame.image.load('Wood_BG.png')
+GLASS = pygame.image.load('glass.jpg')
 FLY_SURFACE = pygame.image.load('fly.png')
 CROSSHAIR = pygame.image.load('crosshair.png')
 
 # font
 GAME_FONT = pygame.font.Font(None,60)
-TEXT_SURFACE = GAME_FONT.render('You Won!',True,(255,255,255))
+TEXT_SURFACE = GAME_FONT.render('You Won!',True,(0,0,0), (255,255,255))
 TEXT_RECT = TEXT_SURFACE.get_rect(center = (640,300))
 
 
@@ -36,7 +36,7 @@ while True:
 				if fly_rect.collidepoint(event.pos):
 					del fly_list[index]
 
-	SCREEN.blit(WOOD_BG,(0,0))
+	SCREEN.blit(GLASS,(0,0))
 
 	for fly_rect in fly_list:
 		SCREEN.blit(FLY_SURFACE,fly_rect)
